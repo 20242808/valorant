@@ -3,12 +3,6 @@ from fastai.vision.all import *
 from PIL import Image
 import gdown
 
-def load_model():
-    return tf.keras.models.load_model('./valorant_model.h5')
-
-model = load_model()
-
-# 모델 로드
 @st.cache_resource
 def load_model():
     return tf.keras.models.load_model('valorant_model.h5')
