@@ -1,9 +1,8 @@
-pip show tensorflow
-
 import streamlit as st
+from fastai.vision.all import *
 from PIL import Image
-import numpy as np
-import tensorflow as tf
+import gdown
+
 
 # 모델 로드
 @st.cache_resource
