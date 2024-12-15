@@ -10,7 +10,7 @@ def load_model():
 
 model = load_model()
 
-# 클래스 이름 (에이전트 이름)
+# 클래스 이름 (캐릭터 이름)
 CLASS_NAMES = [
     "Astra", "Breach", "Brimstone", "Chamber", "Cypher",
     "Fade", "Harbor", "Jett", "KAY/O", "Killjoy", 
@@ -19,10 +19,10 @@ CLASS_NAMES = [
 ]
 
 # Streamlit UI
-st.title("발로란트 에이전트 분류기")
-st.write("에이전트 사진을 업로드하면 어떤 에이전트인지 알려드립니다!")
+st.title("발로란트 캐릭터 분류기")
+st.write("캐릭터 사진을 업로드하면 어떤 캐릭터인지 알려드립니다!")
 
-uploaded_file = st.file_uploader("에이전트 이미지를 업로드하세요", type=["png", "jpg", "jpeg"])
+uploaded_file = st.file_uploader("캐릭터 사진을 업로드하세요", type=["png", "jpg", "jpeg"])
 
 if uploaded_file is not None:
     # 이미지 표시
@@ -38,4 +38,4 @@ if uploaded_file is not None:
     predicted_class = CLASS_NAMES[np.argmax(predictions)]
 
     # 결과 출력
-    st.write(f"### 이 에이전트는: {predicted_class} 입니다!")
+    st.write(f"### 이 캐릭터는: {predicted_class} 입니다!")
